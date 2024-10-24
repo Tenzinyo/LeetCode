@@ -1,20 +1,20 @@
-  def maxProduct(self, s: str) -> int:
-      # result=[]
-      n,palindrome = len(s),{} #mapping the length
-      for i in range(1,1<<n):
-          subseq = ""
-          for j in range(n):
-              if i &(1<<j):
-                  subseq +=s[j] 
-          if subseq==subseq[::-1]:
-              palindrome[i]=len(subseq)
+def maxProduct(self, s: str) -> int:
+    # result=[]
+    n,palindrome = len(s),{} #mapping the length
+    for i in range(1,1<<n):
+        subseq = ""
+        for j in range(n):
+            if i &(1<<j):
+                subseq +=s[j] 
+        if subseq==subseq[::-1]:
+            palindrome[i]=len(subseq)
 
-      res=0
-      for x in palindrome:
-          for y in palindrome:
-              if x&y==0: #not equal
-                  res= max(res,palindrome[x]*palindrome[y])
-      return res
+    res=0
+    for x in palindrome:
+        for y in palindrome:
+            if x&y==0: #not equal
+                res= max(res,palindrome[x]*palindrome[y])
+    return res
 
 
-        
+      
