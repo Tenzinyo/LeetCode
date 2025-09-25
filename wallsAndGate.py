@@ -26,5 +26,3 @@ def wallsAndGate(self, rooms: List[List[int]]) -> int:
              addRooms(r-1,c)
              addRooms(r,c-1)
         dis +=1
-        
-    
