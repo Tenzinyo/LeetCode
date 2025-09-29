@@ -3,7 +3,7 @@ def topKFrequent(self, nums, k):
     freq = [[] for i in range(len(nums)+1)]
     
     # loop over the nums
-    for i in n:
+    for i in nums:
         count[i] = 1+ count.get(i,0)
     #  loop over the number and the counter
     for n,c in count.items():
