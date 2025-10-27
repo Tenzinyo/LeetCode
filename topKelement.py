@@ -1,3 +1,5 @@
+import heapq
+from collections import Counter
 def topKFrequent(self, nums, k):
     count = {}
     freq = [[] for i in range(len(nums)+1)]
@@ -16,3 +18,15 @@ def topKFrequent(self, nums, k):
             result.append(i)
             if len(result)==k:
                 return result
+
+def topk(self,nums,k):
+    count = Counter(nums)
+    heap = []
+    for k,v in count.items():
+        if len(heap) < k:
+            heapq.heappush(heap,(v,k))
+        else:
+            heapq.heappushpop(heap,(v,k))
+    return [h[1] for h in heap]
+            
+    
